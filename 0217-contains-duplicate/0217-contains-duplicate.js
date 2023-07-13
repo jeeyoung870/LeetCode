@@ -3,12 +3,14 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-
-    var sortedNums = nums.sort();
+    // this sucks
+    numarr = nums;
     var isDuplicate = false;
-
-    for(var i=0; i<sortedNums.length-1; i++) {
-        if(sortedNums[i] === sortedNums[i+1]) {
+    
+    for(var i=nums.length-1; i>0; i--) {
+        var n = numarr[i];
+        numarr.pop();   // delete one element from the back
+        if (numarr.includes(n)) {
             isDuplicate = true;
             break;
         }
