@@ -9,7 +9,7 @@
 var mergeAlternately =   function(word1, word2) {
 
     var merged = '';
-    while(word1.length != 0 && word2.length != 0) { 
+    while(word1.length !== 0 && word2.length !== 0) { 
         merged += (word1[0] + word2[0]);
         word1 = word1.slice(1);
         word2 = word2.slice(1);
