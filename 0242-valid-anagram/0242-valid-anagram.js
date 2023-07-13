@@ -4,22 +4,16 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    // 1st
+    
     if(s.length != t.length) {
       return false;
     }
 
-    var isan = true;
+    // 2nd
+    var s_arr = [...s].sort();
+    var t_arr = [...t].sort();
+    
+    return JSON.stringify(s_arr) === JSON.stringify(t_arr) ;
 
-    for (var letter of s) {
-      var idx = t.indexOf(letter);
-      if(0 > idx) { 
-        isan = false;
-        break;
-      } else {
-        t = t.replace(t[idx], '');
-      }
 
-    }
-    return isan;
 };
