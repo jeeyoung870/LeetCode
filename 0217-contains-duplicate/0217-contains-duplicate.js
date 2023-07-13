@@ -4,14 +4,19 @@
  */
 var containsDuplicate = function(nums) {
     
-    var sortedNums = nums.sort();
-    var isDuplicate = false;
+    // OH MY GOD
+    const numSet = new Set(nums);
+    return nums.length !== numSet.size;
 
-    for(var i=0; i<sortedNums.length-1; i++) {
-        if(sortedNums[i] === sortedNums[i+1]) {
-            isDuplicate = true;
-            break;
-        }
-    }
-    return isDuplicate;
+    
+    // var sortedNums = nums.sort();
+    // var isDuplicate = false;
+
+    // for(var i=0; i<sortedNums.length-1; i++) {
+    //     if(sortedNums[i] === sortedNums[i+1]) {
+    //         isDuplicate = true;
+    //         break;
+    //     }
+    // }
+    // return isDuplicate;
 };
