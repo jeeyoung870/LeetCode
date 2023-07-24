@@ -12,7 +12,7 @@ var isPalindrome = function(s) {
     
     // \W ==  not [A-Za-z0-9_] 
     var replacedStr = s.toLowerCase().replace(/\W|_/g, '');
-    console.log(replacedStr);
+    //console.log(replacedStr);
     
     const loop = Math.floor(replacedStr.length/2);
     const len = replacedStr.length;
