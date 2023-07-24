@@ -4,8 +4,9 @@
  */
 var isPalindrome = function(s) {
     
-    // O(n+n/2)
-
+    // time complexity : O(n+n/2)
+    // Space Complexity : O(n)
+    
     if(s.trim().length === 0){
         return true;
     }
@@ -18,7 +19,6 @@ var isPalindrome = function(s) {
     const len = replacedStr.length;
     
     for (var i=0; i<loop; i++) {
-        //console.log(replacedStr[i] , replacedStr[len-i-1]);
         if (replacedStr[i] !== replacedStr[len-i-1]) {
             return false;
         }
