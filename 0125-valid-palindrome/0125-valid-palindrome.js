@@ -4,7 +4,7 @@
  */
 var isPalindrome = function(s) {
     
-    // O(n/2)
+    // O(n+n/2)
 
     if(s.trim().length === 0){
         return true;
