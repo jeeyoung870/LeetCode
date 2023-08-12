@@ -11,20 +11,20 @@ class Solution {
         charMap.put('{', '}');
         charMap.put('[', ']');
         
-        char[] charArr = s.toCharArray();
+        // char[] charArr = s.toCharArray();
         Stack<Character> keyStack = new Stack<>();
         
         for(int i=0; i < s.length(); i++) {
             // System.out.println("keyStack : "+keyStack);
-            if( charMap.containsKey(charArr[i]) ) {
-                keyStack.push(charArr[i]);
+            char ch = s.charAt(i);
+            if( charMap.containsKey(ch) ) {
+                keyStack.push(ch);
             } else {
-                if(keyStack.size() == 0 || charMap.get(keyStack.pop()) != charArr[i]){
+                if(keyStack.size() == 0 || charMap.get(keyStack.pop()) != ch ){
                     return false;
                 }
             }
         }
-        
         return keyStack.size() == 0 ? true : false;
     }
 }
