@@ -1,13 +1,23 @@
 class Solution {
+
+    public int startIdx = 0 ;
+    
     public int search(int[] nums, int target) {
         
-        for(int i=0; i<nums.length; i++){
-            if(nums[i] > target){
-                break;
-            }else if(nums[i] == target) {
-                return i;
-            }
+        if( nums.length == 1 && nums[0] != target ){
+            return -1;
         }
-        return -1;
+
+        int midIdx = nums.length/2;
+
+        if(nums[midIdx] == target){
+            return startIdx+midIdx;
+        }
+        else if(nums[midIdx] < target){
+            startIdx += midIdx;
+            return search(Arrays.copyOfRange(nums,midIdx,nums.length), target );
+        } else /* if(nums[midIdx] > target) */{
+            return search(Arrays.copyOfRange(nums,0,midIdx), target );
+        }
     }
 }
